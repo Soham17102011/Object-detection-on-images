@@ -1,5 +1,6 @@
 body {
-    background: cover;
+    background-size: cover;
+    background-position: center;
 }
 
 .heading {
@@ -8,32 +9,10 @@ body {
     font-size: 25px;
 }
 
-#bedroom_a {
-    background-color: black;
+a {
+    width: 400px;
+    font-size: 20px !important;
+    border-radius: 30px !important;
     color: white;
-    width: 25%;
-    border-radius: 25px;
-    position: absolute;
-    left: 570px;
-    top: 100px;
-}
-
-#hall_a {
     background-color: black;
-    color: white;
-    width: 25%;
-    border-radius: 25px;
-    position: absolute;
-    left: 570px;
-    top: 300px;
-}
-
-#kitchen_a {
-    background-color: black;
-    color: white;
-    width: 25%;
-    border-radius: 25px;
-    position: absolute;
-    left: 570px;
-    top: 500px;
 }
