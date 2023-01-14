@@ -20,12 +20,45 @@
 
 <body background="background.jpg">
     <center>
-        <h1 class="btn btn-primary heading">Hall</h1>
+        <h1 class="btn btn-primary heading">Bedroom</h1>
 
         <h3 id="status " class="btn btn-danger "></h3>
-        <h3 id="number_of_objects " class="btn btn-warning "></h3>
+        <h3 class="btn btn-warning">There are 6 objects in this image out of which cocossd has detected 2</h3>
     </center>
     <a href="index.html" class="btn">Back</a>
+
+    <script>
+        status = "";
+        img = "";
+        objectDetector = "";
+        objects = [];
+
+        function preload() {
+            img = loadImage("bedroom.jpg");
+        }
+
+        function setup() {
+            canvas = createCanvas(640, 420);
+            canvas.center();
+            objectDetector = ml5.objectDetector('cocossd', modelLoaded);
+            document.getElementById("status").innerHTML = "Status : Detecting Objects";
+        }
+
+        function modelLoaded() {
+            console.log("Model Loaded!!!")
+            status = true;
+            objectDetector.detect(img, gotResult);
+        }
+
+        function gotResult(error, results) {
+            if (error) {
+                console.error;
+            }
+            console.log(results);
+            objects = results;
+        }
+    </script>
 </body>
+
 
 </html>
